@@ -1,0 +1,21 @@
+runtime: nodejs20  # Use Node.js 20 runtime
+
+handlers:
+  # Serve all files in the assets directory
+  - url: /assets
+    static_dir: build/assets
+
+  # Serve the favicon
+  - url: /favicon.ico
+    static_files: build/favicon.ico
+    upload: build/favicon.ico
+
+  # Serve the manifest file
+  - url: /manifest.json
+    static_files: build/manifest.json
+    upload: build/manifest.json
+
+  # Catch-all handler to serve index.html for client-side routing
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
